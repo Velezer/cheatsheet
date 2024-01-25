@@ -1,0 +1,4 @@
+int n = 1;
+char c = 'c'
+
+c = (char) ((c + n - 'a') % 26 + 'a'); // -> c equals 'd'
