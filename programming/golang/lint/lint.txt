@@ -1,0 +1,9 @@
+go install mvdan.cc/gofumpt@latest
+
+gofumpt -w file.go
+
+// all files
+gofumpt -w .
+
+golangci-lint run
+
