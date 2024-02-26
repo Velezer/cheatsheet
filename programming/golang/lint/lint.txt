@@ -7,3 +7,4 @@ gofumpt -w .
 
 golangci-lint run
 
+golangci-lint run --config .golangci.yml 
