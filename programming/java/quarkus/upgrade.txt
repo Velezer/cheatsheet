@@ -2,4 +2,4 @@ https://quarkus.io/guides/update-quarkus
 
 mvn io.quarkus.platform:quarkus-maven-plugin:3.8.3:update -N
 
-mvn versions:use-latest-versions
+mvn versions:use-latest-versions -DallowSnapshots=false
