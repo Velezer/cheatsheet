@@ -15,8 +15,11 @@
 			"installDockerComposeSwitch": true,
 			"version": "latest",
 			"dockerDashComposeVersion": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/graalvm-asdf:2": {
+			"version": "latest"
 		}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {}
@@ -26,7 +29,7 @@
 	// "forwardPorts": [5432],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "java -version",
+	"postCreateCommand": "gu install native-image"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
