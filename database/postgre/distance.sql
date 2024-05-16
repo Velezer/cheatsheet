@@ -78,9 +78,13 @@ ORDER BY distance_in_meter asc
 ;
 
 -- alternative without postgis
--- using bounding box approach
+
+-- use these two indexes
 CREATE INDEX idx_latitude ON research (latitude);
 CREATE INDEX idx_longitude ON research (longitude);
+
+-- or just use this
+CREATE INDEX research_latitude_idx ON public.research (latitude,longitude);
 
 explain analyze
 SELECT id, latitude, longitude, 
