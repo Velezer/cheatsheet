@@ -78,7 +78,7 @@ ORDER BY distance_in_meter asc
 ;
 
 -- alternative without postgis
-
+-- using bounding box approach
 CREATE INDEX idx_latitude ON research (latitude);
 CREATE INDEX idx_longitude ON research (longitude);
 
