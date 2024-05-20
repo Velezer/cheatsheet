@@ -91,8 +91,11 @@ explain analyze
 SELECT id, latitude, longitude, 
     (SQRT(POW(69.1 * (latitude::float - -6.213018), 2) + POW(69.1 * (106.8376889 - longitude::float) * COS(latitude::float / 57.3), 2)) * 1609.344) AS distance_in_meter
 FROM research
-WHERE latitude BETWEEN -6.213018 - 1 AND -6.213018 + 1
-  AND longitude BETWEEN 106.8376889 - 1 AND 106.8376889 + 1
+WHERE latitude BETWEEN -6.213018 - 0.2 AND -6.213018 + 0.2
+  AND longitude BETWEEN 106.8376889 - 0.2 AND 106.8376889 + 0.2
   AND (SQRT(POW(69.1  * (latitude::float - -6.213018), 2) + POW(69.1 * (106.8376889 - longitude::float) * COS(latitude::float / 57.3), 2)) * 1609.344) < 100000
 ORDER BY distance_in_meter;
 
+-- point between city edges
+-- -6.117289616948597, 106.96063090401152
+-- -6.329517992454455, 106.75288317418652
